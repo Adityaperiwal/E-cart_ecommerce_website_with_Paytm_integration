@@ -1,4 +1,4 @@
 # E-cart_ecommerce_website_with_Paytm_integration
 E-cart is a sample e-commerce website with some built in features like custom cart using AJAX requests, filtered search for products and Paytm payment gateway integration. It can be a good boilerplate for your e-commerce website.  
 
-Instructions to run the project: Just copy all the files to a folder and name it "E-cart2" in your xampp's htdocs folder or you can even run it with your own folder by changing the appropriate links in the files.In case, if some links or functions are not working properly just change the href link and try again, thanks for reading.
+Instructions to run the project: Just copy all the files to a folder and name it "E-cart2" in your xampp's htdocs folder or you can even run it with your own folder by changing the appropriate links in the files. In case, if some links or functions are not working properly, just change the href link and then try again, thanks for reading.
