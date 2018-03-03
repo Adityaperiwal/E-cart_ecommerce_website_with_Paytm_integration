@@ -4,5 +4,5 @@
 session_destroy();
 setcookie("id","",time()-3600,'/');
 setcookie("id","",time()-3600,'/');
-header("Location:http://localhost/e-cart2/login.php");
+header("Location:http://localhost/E-cart/login.php");
   ?>

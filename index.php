@@ -5,7 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
-<?php if(!isset($_COOKIE['id']))header("Location:http://localhost/E-cart2/login.php");?>
+<?php if(!isset($_COOKIE['id']))header("Location:http://localhost/E-cart/login.php");?>
 <html>
 <head>
 <title>E CART</title>

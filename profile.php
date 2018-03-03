@@ -1,60 +1,7 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
+<?php if(!isset($_COOKIE['id']))header("Location:http://localhost/E-cart/login.php");?>
 <html>
-<?php if(!isset($_COOKIE['id'])) header("Location:http://localhost/E-cart2/login.php");?>
 <head>
-<style>
-th, td{
-padding:10px !important;
-}
-.button1:hover{
-background-color:red !important;
-}
-</style>
-
-<!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<script>
-
-jQuery( document ).ready(function( $ ) {
-
-//Use this inside your document ready jQuery 
-$(window).on('popstate', function() {
-   location.reload(true);
-});
-
-});
-function addToCart(pid)
-{
- $.ajax({
-	 type:'GET',
-	 data:{"pid":pid},
-	 url:"altercart.php?task=add",
-	 success:function(data){
-	 $('#'+pid).html(data);
-	 }
- });   
-}
-
-function removeFromCart(pid)
-{
- $.ajax({
-	 type:'GET',
-	 data:{"pid":pid},
-	 url:"altercart.php?task=remove",
-	 success:function(data){
-	 $('#'+pid).html(data);
-	 }
- });   
-}
-
-</script>
 <title>E CART</title>
 <!--/tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,71 +15,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <link href="css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
-<!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- //for bootstrap working -->
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
-<script>
-
-jQuery( document ).ready(function( $ ) {
-
-//Use this inside your document ready jQuery 
-$(window).on('popstate', function() {
-   location.reload(true);
-});
-
-});
-function addToCart(pid)
-{
- $.ajax({
-	 type:'GET',
-	 data:{"pid":pid},
-	 url:"altercart.php?task=add",
-	 success:function(data){
-	 $('#'+pid).html(data);
-	 }
- });   
-}
-
-function removeFromCart(pid)
-{
- $.ajax({
-	 type:'GET',
-	 data:{"pid":pid},
-	 url:"altercart.php?task=remove",
-	 success:function(data){
-	 $('#'+pid).html(data);
-	 }
- });   
-}
-
-</script>
 </head>
+<style>
+
+</style>
 <body>
+
 <!-- header -->
 
 <!-- //header -->
 <!-- header-bot -->
-<div class="header-bot">
+<div class="header-bot"style="background-color:#6D2E1D !important;padding-bottom:40px !important;">
 	<div class="header-bot_inner_wthreeinfo_header_mid">
 
 		<div class="col-md-4 logo_agile">
-				<h1><a href="index.html"><span>E</span>Cart</a></h1>
+				<h1><a href="index.php"><span>E</span>Cart</a></h1>
 				</div>
 		<!-- header-bot -->
 		
 		<div class="col-md-4 header-middle">
-			<form action="#" method="post">
-					<input type="search" name="search" placeholder="Search here..." required="">
-					<input type="submit" value=" ">
+			<form action="searchresults.php" method="post">
+					<input type="search" style="color:brown;" name="search" placeholder="Search products by name..." required="">
+					<input type="submit" value=" " >
+		<select name="filter" default="All" style="font-size:15px;color:white;background-color:#6D2E1D;padding:10px;border-color:#4B382A;width:99%;">
+	<option value="All" selected="selected" style="display:none !important;">Choose filter</option>
+	<option value="0" >All products</option>
+    <option value="1">Games</option>
+    <option value="3">Accessories</option>
+    <option value="2">Clothing</option>
+    <option value="4">Electronics</option>
+				
+				
+	
+  </select>
 				<div class="clearfix"></div>
+		
 			</form>
 		</div>
         <!-- header-bot -->
 		<div class="col-md-4 agileits-social top_content">
 						<ul class="social-nav model-3d-0 footer-social w3_agile_social">
-						                                   <li class="share">Share On : </li>
+						                                   <li class="share" style="color:white !important;">Share On : </li>
 															<li><a href="#" class="facebook">
 																  <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
 																  <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div></a></li>
@@ -172,28 +98,33 @@ function removeFromCart(pid)
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav menu__list">
-					<li class="active menu__item menu__item--current"><a class="menu__link" href="index.html">Home <span class="sr-only">(current)</span></a></li>
-					<li class=" menu__item"><a class="menu__link" href="about.html">About</a></li>
+					<li class="menu__item"><a class="menu__link" href="index.php">Home <span class="sr-only">(current)</span></a></li>
+					<li class=" menu__item"><a class="menu__link" href="about.php">About</a></li>
 					<li class="menu__item dropdown">
 						<a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
 								 <ul class="dropdown-menu agile_short_dropdown">
-									 <li><a href="icons.html">Games</a></li>
-									 <li><a href="typography.html">Clothing</a></li>
-									 <li><a href="typography.html">Electronics</a></li>
-									 <li><a href="typography.html">Accessories</a></li>
+									 <li><a href="products.php?type=1">Games</a></li>
+									 <li><a href="products.php?type=0">Clothing</a></li>
+									 <li><a href="products.php?type=2">Electronics</a></li>
+									 <li><a href="products.php?type=3">Accessories</a></li>
 								 </ul>
 					 </li>
 							
 					</li>
-					<li class=" menu__item"><a class="menu__link" href="contact.html">Your cart</a></li>
-					<li class=" menu__item"><a class="menu__link" href="contact.html">Contact us</a></li>
+					<li class=" menu__item"><a class="menu__link" href="cart.php"><div class="front"><i class="fa fa-shopping-cart" style="font-size:20px;" aria-hidden="true"></i> Your Cart</div></a></li>
+					<li class=" menu__item"><a class="menu__link" href="contactus.php">Contact us</a></li>
 					
 				  </ul>
 				  </div>
 			  </div>	
 			</nav>	
-			<span style="float:right;"><img src="images/t1.jpg" style="padding-top:10px;" height="60px" width="50px"></span>
-			
+			<span><a href="logout.php" style="float:right;padding-top:20px;padding-left:5px;">Logout</a></span>
+				<span style="float:right;padding-top:20px;color:white;"><?php echo $_COOKIE['uname'];?></span>
+				<!-- for default image in case of no profile picture $image = $results_row['photo'];
+if (empty($image)) $image = "default.png";
+<img src="/image/'.$image.'" width="50px" height="40px">-->
+				<span style="float:right;"><img src="images/<?php if(isset($_COOKIE['image'])) echo $_COOKIE['image']; else echo "default.jpeg";?>" style="padding:10px;" height="100%" width="60px"></span>
+		
 		</div>
 				<div class="clearfix"></div>
 	</div>
@@ -312,6 +243,7 @@ function removeFromCart(pid)
 				<!-- //Modal content-->
 			</div>
 		</div>
+
 <!-- //Modal2 -->
 <div class="page-head_agile_info_w3l">
 		<div class="container">

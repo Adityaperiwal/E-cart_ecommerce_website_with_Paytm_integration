@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html>
-<?php if(!isset($_COOKIE['id'])) header("Location:http://localhost/E-cart2/login.php");?>
+<?php if(!isset($_COOKIE['id'])) header("Location:http://localhost/E-cart/login.php");?>
 <head>
 <!-- jquery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -142,9 +142,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav menu__list">
-					<li class="active menu__item menu__item--current"><a class="menu__link" href="index.php">Home <span class="sr-only">(current)</span></a></li>
-					<li class=" menu__item"><a class="menu__link" href="about.html">About</a></li>
-					<li class="menu__item dropdown">
+					<li class="menu__item"><a class="menu__link" href="index.php">Home <span class="sr-only">(current)</span></a></li>
+					<li class=" menu__item"><a class="menu__link" href="about.php">About</a></li>
+					<li class="active menu__item menu__item--current">
 						<a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
 								 <ul class="dropdown-menu agile_short_dropdown">
 									 <li><a href="products.php?type=1">Games</a></li>
@@ -156,7 +156,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							
 					</li>
 					<li class=" menu__item"><a class="menu__link" href="cart.php"><div class="front"><i class="fa fa-shopping-cart" style="font-size:20px;" aria-hidden="true"></i> Your Cart</div></a></li>
-					<li class=" menu__item"><a class="menu__link" href="contact.html">Contact us</a></li>
+					<li class=" menu__item"><a class="menu__link" href="contact.php">Contact us</a></li>
 					
 				  </ul>
 				  </div>

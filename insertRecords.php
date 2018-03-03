@@ -14,7 +14,7 @@
 	
 	$con -> query($command);
 	echo "Your id has been created successfully.";
-header("Location:http://localhost/e-cart2/login.php");	
+header("Location:http://localhost/E-cart/login.php");	
 }
 	
 	

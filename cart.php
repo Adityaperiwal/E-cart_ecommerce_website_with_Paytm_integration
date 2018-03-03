@@ -6,6 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html>
+<?php if(!isset($_COOKIE['id']))header("Location:http://localhost/E-cart/login.php");?>
 <head>
 <style>
 .button1:hover{
@@ -77,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header-bot_inner_wthreeinfo_header_mid">
 
 		<div class="col-md-4 logo_agile">
-				<h1><a href="index.html"><span>E</span>Cart</a></h1>
+				<h1><a href="index.php"><span>E</span>Cart</a></h1>
 				</div>
 		<!-- header-bot -->
 		
@@ -143,8 +144,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav menu__list">
-					<li class="active menu__item menu__item--current"><a class="menu__link" href="index.php">Home <span class="sr-only">(current)</span></a></li>
-					<li class=" menu__item"><a class="menu__link" href="about.html">About</a></li>
+					<li class="menu__item"><a class="menu__link" href="index.php">Home <span class="sr-only">(current)</span></a></li>
+					<li class=" menu__item"><a class="menu__link" href="about.php">About</a></li>
 					<li class="menu__item dropdown">
 						<a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
 								 <ul class="dropdown-menu agile_short_dropdown">
@@ -156,8 +157,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 </li>
 							
 					</li>
-					<li class=" menu__item"><a class="menu__link" href="cart.php"><div class="front"><i class="fa fa-shopping-cart" style="font-size:20px;" aria-hidden="true"></i> Your Cart</div></a></li>
-					<li class=" menu__item"><a class="menu__link" href="contact.html">Contact us</a></li>
+					<li class="active menu__item menu__item--current"><a class="menu__link" href="cart.php"><div class="front"><i class="fa fa-shopping-cart" style="font-size:20px;" aria-hidden="true"></i> Your Cart</div></a></li>
+					<li class=" menu__item"><a class="menu__link" href="contactus.php">Contact us</a></li>
 					
 				  </ul>
 				  </div>
@@ -296,7 +297,7 @@ if (empty($image)) $image = "default.png";
 						<div class="agile_inner_breadcrumb">
 
 						   <ul class="w3_short">
-								<li><a href="index.html">Home</a><i>|</i></li>
+								<li><a href="index.php">Home</a><i>|</i></li>
 								<li>Cart</li>
 							</ul>
 						 </div>

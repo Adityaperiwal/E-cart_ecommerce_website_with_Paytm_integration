@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php if(!isset($_COOKIE['id']))header("Location:http://localhost/E-cart2/login.php");?>
+<?php if(!isset($_COOKIE['id']))header("Location:http://localhost/E-cart/login.php");?>
 <html>
 <head>
 <title>E CART</title>
@@ -98,8 +98,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
 				  <ul class="nav navbar-nav menu__list">
-					<li class="active menu__item menu__item--current"><a class="menu__link" href="index.php">Home <span class="sr-only">(current)</span></a></li>
-					<li class=" menu__item"><a class="menu__link" href="about.php">About</a></li>
+					<li class="menu__item"><a class="menu__link" href="index.php">Home <span class="sr-only">(current)</span></a></li>
+					<li class="active menu__item menu__item--current"><a class="menu__link" href="about.php">About</a></li>
 					<li class="menu__item dropdown">
 						<a class="menu__link" href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
 								 <ul class="dropdown-menu agile_short_dropdown">

@@ -15,7 +15,7 @@
 		$image = $row[3];
 		setcookie("image",$image,time()+(86400*15),'/');
 		echo "Login success...welcome " .$row[4]."." ;
-		header("Location: http://localhost/E-cart2/index.php");
+		header("Location: http://localhost/E-cart/index.php");
         
 	
 	}

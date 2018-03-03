@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html>
-<?php if(!isset($_COOKIE['id'])) header("Location:http://localhost/E-cart2/login.php");?>
+<?php if(!isset($_COOKIE['id'])) header("Location:http://localhost/E-cart/login.php");?>
 <head>
 <title>E CART</title>
 <!--/tags -->
