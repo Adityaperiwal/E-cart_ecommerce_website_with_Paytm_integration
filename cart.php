@@ -339,7 +339,7 @@ if (empty($image)) $image = "default.png";
 											
 									</div>
 									<div class="item-info-product" >
-										<h4><a href="productdetails.php?pid=<?php echo $row['pid']; ?>"><?php echo $row2['name'];?></a></h4>
+										<div style="height:50px;"><h4><a href="productdetails.php?pid=<?php echo $row['pid']; ?>"><?php echo $row2['name'];?></a></h4></div>
 										<div class="info-product-price">
 											<span class="item_price">$<?php echo $row2['cost'];?></span>
 											<del>$69.71</del>
@@ -363,9 +363,9 @@ if (empty($image)) $image = "default.png";
 								<div style="padding:5px;">Quantity <input type="number" value="1" min="1" max="10" name="<?php echo $row['pid'];?>"></div>
 							</div>
 							
-                            
+                            <?php }?>
 							</div>
-							<?php }?>
+							
 					
 								<div class="clearfix"></div>
 			</div>

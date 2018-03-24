@@ -377,10 +377,10 @@ if (empty($image)) $image = "default.png";
 									</div>
 								</div>
 							</div>
-							
+							<?php }?>
                             
 							</div>
-							<?php }?>
+							
 								<div class="clearfix"></div>
 			</div>
 		</div>
