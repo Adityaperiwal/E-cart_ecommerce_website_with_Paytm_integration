@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -13,7 +14,7 @@
 <form action="getRecords.php" method="post">
 <table>
 <div style="text-align:center;"><tr><td><h1>E-cart</h1> login</td></tr></div>
-
+<?php if(isset($_GET['login'])) echo "<span style='color:red;'>Invalid username or password</span>"; ?>
 <tr><td><div style="margin-bottom:10px;">Username:</div></td>
 <td><input type="text" name="uname"style="margin-bottom:10px;" required=""/></td></tr>
 <tr><td><div style="margin-bottom:50px;">Password:</div></td>

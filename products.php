@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html>
-<?php if(!isset($_COOKIE['id'])) header("Location:http://localhost/E-cart/login.php");?>
+
 <head>
 <title>E CART</title>
 <!--/tags -->
@@ -158,13 +158,13 @@ function removeFromCart(pid)
 				  </div>
 			  </div>	
 			</nav>	
-			<span><a href="logout.php" style="float:right;padding-top:20px;padding-left:5px;">Logout</a></span>
-				<span style="float:right;padding-top:20px;color:white;"><?php echo $_COOKIE['uname'];?></span>
+			<span><?php if (isset($_COOKIE['id'])){?><a href="logout.php" style="float:right;padding-top:20px;padding-left:5px;color:white;">Logout</a></span><?php } else {?>
+<a href="login.php" style="float:right;padding-top:20px;padding-left:5px;color:white;">Login</a></span><?php }?>
+				<span style="float:right;padding-top:20px;color:white;"><?php if(isset($_COOKIE['uname']))echo $_COOKIE['uname'];?></span>
 				<!-- for default image in case of no profile picture $image = $results_row['photo'];
 if (empty($image)) $image = "default.png";
 <img src="/image/'.$image.'" width="50px" height="40px">-->
 				<span style="float:right;"><img src="images/<?php if(isset($_COOKIE['image'])) echo $_COOKIE['image']; else echo "default.jpeg";?>" style="padding:10px;" height="100%" width="60px"></span>
-		
 		</div>
 				<div class="clearfix"></div>
 	</div>
@@ -355,6 +355,7 @@ if (empty($image)) $image = "default.png";
 																	<input type="hidden" name="return" value=" " />
 																	<input type="hidden" name="cancel_return" value=" " />
 																	<?php 
+	 if(isset($_COOKIE['id'])){ 
 	  $q2="Select * from cart where uid ='".$_COOKIE['id']."'and pid=".$row['pid'];
 	  $r2=mysqli_query($con,$q2);
 	  $rows=mysqli_num_rows($r2);
@@ -368,7 +369,10 @@ if (empty($image)) $image = "default.png";
 	  <div id="<?php echo $row['pid']."10000";?>">
 	  <input type="button" onclick="addToCart(<?php echo $row['pid'];?>)" name="submit" value="Add to cart" class="button" />
 	  </div>
-	  <?php }?>
+	  <?php }
+	}
+	else
+{?><a href="login.php"><input type="button" name="submit" value="Add to cart" class="button" /></a><?php }?>
 																
 																</fieldset>
 															</form>

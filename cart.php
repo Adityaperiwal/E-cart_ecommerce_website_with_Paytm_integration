@@ -25,26 +25,26 @@ $(window).on('popstate', function() {
 });
 
 });
-function addToCart(pid)
+function addToCart(pid, rid)
 {
  $.ajax({
 	 type:'GET',
 	 data:{"pid":pid},
 	 url:"altercart.php?task=add",
 	 success:function(data){
-	 $('#'+pid+"10000").html(data);
+	 $('#'+pid+rid).html(data);
 	 }
  });   
 }
 
-function removeFromCart(pid)
+function removeFromCart(pid, rid)
 {
  $.ajax({
 	 type:'GET',
 	 data:{"pid":pid},
 	 url:"altercart.php?task=remove",
 	 success:function(data){
-	 $('#'+pid+10000).html(data);
+	 $('#'+pid+rid).html("").css("display", "none");
 	 }
  });   
 }
@@ -319,13 +319,14 @@ if (empty($image)) $image = "default.png";
 				include_once("dbConnection.php");
 				$q1="Select * from cart where uid=".$_COOKIE['id'];
 				$r1=mysqli_query($con,$q1); 
+				$rid=0;
 				while($row=mysqli_fetch_assoc($r1))
-                       {
+                       {$rid++;
 						   $q2="Select * from products where pid='".$row['pid']."'";
 						   $r2=mysqli_query($con,$q2);
                            $row2=mysqli_fetch_assoc($r2);				 
 				 ?>
-			<div class="col-md-3 product-men">
+			<div class="col-md-3 product-men" id="<?php echo $row['pid'].$rid;?>">
 								<div class="men-pro-item simpleCart_shelfItem">
 									<div class="men-thumb-item">
 										<img src="images/<?php echo $row2['imagename'];?>" alt="" class="pro-image-front" height="300px" width="100px">
@@ -347,8 +348,8 @@ if (empty($image)) $image = "default.png";
 										<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
 															
 																
-	  <div id="<?php echo $row['pid']."10000";?>">
-	  	<input type="button" onclick="removeFromCart(<?php echo $row['pid'];?>)" name="submit" value="Remove from cart" class="button" />
+	  <div>
+	  	<input type="button" onclick="removeFromCart(<?php echo $row['pid'];?>, <?php echo $rid;?>)" name="submit" value="Remove from cart" class="button" />
 	  
 	  </div>
 	  

@@ -5,7 +5,6 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
-<?php if(!isset($_COOKIE['id']))header("Location:http://localhost/E-cart/login.php");?>
 <html>
 <head>
 <title>E CART</title>
@@ -124,8 +123,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				  </div>
 			  </div>	
 			</nav>	
-			<span><a href="logout.php" style="float:right;padding-top:20px;padding-left:5px;">Logout</a></span>
-				<span style="float:right;padding-top:20px;color:white;"><?php echo $_COOKIE['uname'];?></span>
+<span><?php if (isset($_COOKIE['id'])){?><a href="logout.php" style="float:right;padding-top:20px;padding-left:5px;color:white;">Logout</a></span><?php } else {?>
+<a href="login.php" style="float:right;padding-top:20px;padding-left:5px;color:white;">Login</a></span><?php }?>
+				<span style="float:right;padding-top:20px;color:white;"><?php if(isset($_COOKIE['uname']))echo $_COOKIE['uname'];?></span>
 				<!-- for default image in case of no profile picture $image = $results_row['photo'];
 if (empty($image)) $image = "default.png";
 <img src="/image/'.$image.'" width="50px" height="40px">-->

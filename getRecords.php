@@ -15,12 +15,14 @@
 		$image = $row[3];
 		setcookie("image",$image,time()+(86400*15),'/');
 		echo "Login success...welcome " .$row[4]."." ;
-		header("Location: http://localhost/E-cart/index.php");
+		if($row[5]=='a')header("Location: http://localhost/E-cart/user.php");
+		else
+			header("Location: http://localhost/E-cart/index.php");
         
 	
 	}
 	else {
-		echo "Invalid username or password";
+		header("Location: http://localhost/E-cart/login.php?login=invalid");
 	}
 	$con -> close();
 	
